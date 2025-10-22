@@ -10,4 +10,5 @@ with open ("ejercicio/libro.txt", "r") as libro:
     while libro.readline():
 
         with open(nombre_fichero, "a") as f:
+            pass
 
