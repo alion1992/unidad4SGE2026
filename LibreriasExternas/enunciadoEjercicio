@@ -1,0 +1,22 @@
+Ejercicio: Análisis de notas con NumPy
+Objetivo:
+
+Aplicar funciones estadísticas (mean, max, min, std) y selección de datos.
+
+📋 Enunciado:
+
+Crea una matriz NumPy de 5×4, donde cada fila representa un alumno y cada columna una asignatura.
+
+Rellena la matriz con notas aleatorias entre 0 y 10 (con decimales).
+
+Calcula:
+
+La media de cada alumno.
+
+La nota media por asignatura.
+
+El número total de aprobados (≥5).
+
+El alumno con la media más alta.
+
+Muestra la matriz original y todos los resultados con mensajes explicativos.

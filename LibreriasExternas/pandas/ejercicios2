@@ -1,0 +1,16 @@
+datos = {
+    "Jugador": ["Messi", "Mbappé", "Bellingham", "Vinicius", "Lewandowski"],
+    "Equipo": ["PSG", "PSG", "Madrid", "Madrid", "Barcelona"],
+    "Goles": [30, 28, 22, 18, 15],
+    "Asistencias": [15, 12, 10, 9, 7]
+}
+
+df = pd.DataFrame(datos)
+
+# 1 Filtrar jugadores con más de 20 goles
+
+# 2 Ordenar por goles
+
+# 3 Media de goles por equipo
+
+# 4 Añadir columna total de participaciones

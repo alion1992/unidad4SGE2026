@@ -1,0 +1,32 @@
+Ejercicio 1: Crear un DataFrame de empleados
+
+Tienes una lista de empleados con los siguientes datos:
+
+Nombres: ['Ana', 'Luis', 'Carlos', 'Marta']
+Edades: [25, 32, 45, 28]
+Salarios: [30000, 40000, 50000, 35000]
+Crea un DataFrame con estos datos.
+Calcula el salario promedio de los empleados.
+Encuentra el empleado con el salario más alto.
+
+
+Ejercicio 2: Filtrar productos por precio
+
+Se te da un DataFrame con la siguiente información sobre productos:
+
+Productos: ['Televisor', 'Computadora', 'Celular', 'Tablet']
+Precios: [800, 1200, 600, 300]
+Filtra los productos que tienen un precio mayor a 500.
+Encuentra el producto con el precio más bajo.
+Ordena los productos por precio de forma ascendente.
+
+
+Ejercicio 4: Tienes un DataFrame con las calificaciones de varios estudiantes:
+
+Estudiantes: ['Pedro', 'Lucía', 'Juan', 'Sara']
+Matemáticas: [85, 95, 75, 65]
+Historia: [88, 90, 70, 80]
+Ciencias: [92, 85, 78, 88]
+Calcula la media de cada estudiante en las tres materias.
+Encuentra el estudiante con la media mas alta.
+Ordena a los estudiantes por su media de manera descendente.
