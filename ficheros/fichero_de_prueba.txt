@@ -1,0 +1,2 @@
+Insert into Personas (id,Nombre, Apellidos, fecha_nacimiento, calle, codigo_postal, numero, movil) values (seq_personas.nextval("personas_seq", "Nombre1", "Alia", "04/05/1992","Falsa","123","+34666666666");
+
