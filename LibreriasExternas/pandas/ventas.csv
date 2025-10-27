@@ -1,0 +1,26 @@
+﻿producto,categoria,precio_bruto,cantidad,fecha_venta
+Teclado,Periféricos,24.99,10,2025-01-10
+Ratón,Periféricos,17.50,14,2025-01-12
+Monitor,Monitores,189.99,5,2025-01-13
+Portátil,Ordenadores,799.00,3,2025-01-14
+Disco Duro,Almacenamiento,59.99,8,2025-01-15
+Pendrive,Almacenamiento,12.50,20,2025-01-16
+Impresora,Oficina,129.90,4,2025-01-18
+Silla Gaming,Mobiliario,199.00,2,2025-01-19
+Altavoces,Audio,49.99,6,2025-01-20
+Auriculares,Audio,34.99,9,2025-01-21
+Micrófono,Audio,55.00,5,2025-01-22
+Cámara Web,Periféricos,69.90,7,2025-01-23
+Base Refrigeradora,Accesorios,24.50,6,2025-01-24
+Mochila,Accesorios,39.90,8,2025-01-25
+Router,Redes,79.00,4,2025-01-26
+Cable HDMI,Accesorios,9.99,15,2025-01-27
+SSD 1TB,Almacenamiento,99.90,6,2025-01-28
+Tablet,Ordenadores,299.00,5,2025-01-29
+Smartphone,Telefonía,699.00,4,2025-01-30
+Smartwatch,Telefonía,199.00,5,2025-02-01
+Auriculares Bluetooth,Audio,89.00,7,2025-02-02
+Hub USB,Periféricos,22.00,9,2025-02-03
+Alfombrilla RGB,Periféricos,29.90,11,2025-02-04
+Monitor 4K,Monitores,349.00,3,2025-02-05
+PC Sobremesa,Ordenadores,999.00,2,2025-02-06
