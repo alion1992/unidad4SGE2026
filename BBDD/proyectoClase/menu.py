@@ -10,6 +10,9 @@ def menu ():
     while True:
         print("1) para insertar un rol \n")
         print("2) listar todas las prioridades \n")
+        print("3) prioridades filtrado por nombre \n")
+        #OPCION 4 mapear la clase programadores y añadir que en la opcion 4 podais añadir un programador
+        #con datos estaticos DEV de rol Consejo: programador.rol_id = 2
         print("8) salirme \n")
 
         opc = int(input("Dime que quieres hacer"))
@@ -22,7 +25,12 @@ def menu ():
         elif opc == 2:
             prioridades = session.query(Prioridad).all()
 
-            print("   ")
+            for prioridad in prioridades:
+                print(f"Nombre: {prioridad.nombre} ID: {prioridad.id}")
+        elif opc == 3:
+            prioridades = session.query(Prioridad).filter_by(nombre='LOW')
+            for prioridad in prioridades:
+                print(f"Nombre: {prioridad.nombre} ID: {prioridad.id}")
         else:
             break
 
