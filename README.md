@@ -47,7 +47,7 @@ class Rol(Base):
 
 <h2>Ejemplos</h2>
 
-### 📌 Tipos de datos más comunes en SQLAlchemy
+### Tipos de datos más comunes en SQLAlchemy
 
 | Tipo SQLAlchemy | Equivalente en PostgreSQL | Uso común |
 |-----------------|---------------------------|-----------|
@@ -67,7 +67,7 @@ class Rol(Base):
 | `JSON` / `JSONB`| JSON / JSONB              | Datos estructurados en formato JSON |
 
 
-### 📌 Campos relacionados con claves
+###  Campos relacionados con claves
 | Tipo | Uso |
 |------|-----|
 | `ForeignKey("tabla.columna")` | Crea clave foránea a otra tabla |
@@ -88,4 +88,47 @@ class Producto(Base):
     stock = Column(Integer, default=0)
     disponible = Column(Boolean, default=True)
     fecha_alta = Column(Date)
+
+```
+
+###  Ejemplo modelo con relaciones en un modelo
+
+
+from sqlalchemy import (
+    Column, Integer, String, Date, Numeric, ForeignKey,
+    UniqueConstraint
+)
+from sqlalchemy.orm import declarative_base, relationship
+
+Base = declarative_base()
+
+class Cliente(Base):
+    __tablename__ = "cliente"
+
+    id = Column(Integer, primary_key=True)
+    nombre = Column(String(100), nullable=False)
+    email = Column(String(120), nullable=False, unique=True)   
+
+    # Relación 1:N con Pedido
+    pedidos = relationship("Pedido", back_populates="cliente")
+
+    def __repr__(self):
+        return f"<Cliente(id={self.id}, nombre='{self.nombre}')>"
+
+
+class Pedido(Base):
+    __tablename__ = "pedido"
+
+    id = Column(Integer, primary_key=True)
+    fecha = Column(Date, nullable=False)
+    total = Column(Numeric(10,2), default=0)
+
+    # Clave foránea
+    cliente_id = Column(Integer, ForeignKey("cliente.id"), nullable=False)
+
+    # Relación inversa
+    cliente = relationship("Cliente", back_populates="pedidos")
+
+    def __repr__(self):
+        return f"<Pedido(id={self.id}, total={self.total})>"
 
