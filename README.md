@@ -93,7 +93,7 @@ class Producto(Base):
 
 ###  Ejemplo modelo con relaciones en un modelo
 
-
+```python
 from sqlalchemy import (
     Column, Integer, String, Date, Numeric, ForeignKey,
     UniqueConstraint
@@ -132,3 +132,4 @@ class Pedido(Base):
     def __repr__(self):
         return f"<Pedido(id={self.id}, total={self.total})>"
 
+    ```
