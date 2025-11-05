@@ -3,7 +3,7 @@
 ```bash
 pip install sqlalchemy psycopg2
 
-<h2>Crear clase agente</h2>
+<h1>Crear clase agente</h1>
 
 ```python
 from sqlalchemy import create_engine
