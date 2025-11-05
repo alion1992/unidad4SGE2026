@@ -45,3 +45,47 @@ class Rol(Base):
 
 ```
 
+<h2>Ejemplos</h2>
+
+### 📌 Tipos de datos más comunes en SQLAlchemy
+
+| Tipo SQLAlchemy | Equivalente en PostgreSQL | Uso común |
+|-----------------|---------------------------|-----------|
+| `Integer`       | INTEGER                   | Números enteros pequeños/medios (id, cantidades, estados) |
+| `BigInteger`    | BIGINT                    | Enteros grandes (id autoincrementales, claves externas grandes) |
+| `SmallInteger`  | SMALLINT                  | Enteros muy pequeños (catálogos, flags) |
+| `Numeric(p,s)`  | NUMERIC(p,s) / DECIMAL    | Precios, horas, dinero, valores exactos en decimal |
+| `Float`         | REAL / DOUBLE PRECISION   | Valores con coma flotante (no exactos) |
+| `Boolean`       | BOOLEAN                   | true / false |
+| `String(n)`     | VARCHAR(n)                | Cadenas de longitud limitada |
+| `Text`          | TEXT                      | Cadenas largas sin límite |
+| `Date`          | DATE                      | Solo fecha |
+| `Time`          | TIME                      | Solo hora |
+| `DateTime`      | TIMESTAMP                 | Fecha + hora |
+| `LargeBinary`   | BYTEA                     | Archivos binarios (imágenes, pdf, bytes) |
+| `Enum(...)`     | ENUM                      | Listas de valores fijos (ACTIVO, INACTIVO, etc.) |
+| `JSON` / `JSONB`| JSON / JSONB              | Datos estructurados en formato JSON |
+
+
+### 📌 Campos relacionados con claves
+| Tipo | Uso |
+|------|-----|
+| `ForeignKey("tabla.columna")` | Crea clave foránea a otra tabla |
+| `PrimaryKeyConstraint`        | Define clave primaria compuesta |
+| `UniqueConstraint`            | Restricción UNIQUE en una o varias columnas |
+
+###  Ejemplo básico en un modelo
+
+```python
+from sqlalchemy import Column, Integer, String, Date, Numeric, Boolean
+
+class Producto(Base):
+    __tablename__ = "producto"
+
+    id = Column(Integer, primary_key=True)
+    nombre = Column(String(100), nullable=False)
+    precio = Column(Numeric(10,2), nullable=False)
+    stock = Column(Integer, default=0)
+    disponible = Column(Boolean, default=True)
+    fecha_alta = Column(Date)
+
