@@ -12,5 +12,12 @@ class Rol(Base):
     id = Column(Integer, primary_key=True)
     nombre = Column(String(20))
 
+class Prioridad(Base):
+    __tablename__ = "prioridad"
+    __table_args__ = {'schema': 'scrum'}
+
+    id = Column(Integer, primary_key=True)
+    nombre = Column(String(20))
+
 
 
