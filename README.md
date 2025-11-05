@@ -16,6 +16,7 @@ engine = create_engine("postgresql+psycopg2://franciscoaliahernandez:@localhost:
 
 Session = sessionmaker(bind=engine)
 session = Session()
+```
 
 <h2>Modelos</h2>
 
