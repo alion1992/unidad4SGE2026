@@ -184,16 +184,19 @@ productos = session.query(Producto).order_by(Producto.precio.desc()).all()
 ### limit y offset
 
 ```python
-tareas = session.query(Tarea).filter(Tarea.estimacion_horas > 2).limit(2)
-            for tarea in tareas:
-                print(f"{tarea.titulo}")
-            seguir = input("¿Quieres seguir?")
-            if seguir == "s":
-                tareas = session.query(Tarea).filter(Tarea.estimacion_horas > 2).offset(2).limit(2)
-                for tarea in tareas:
-                    print(f"{tarea.titulo}")
-            else:
-                print("No te devuelvo más registros")
+            while True:
+                resp = input("¿Quieres otras dos?")
+
+                if resp.lower() == "no":
+                    print("adios")
+                    break
+
+                if resp.lower() == "si":
+                    dosSiguientes = session.query(Tarea).filter(Tarea.estimacion_horas > 2).offset(2).limit(2).all()
+                    for tarea in dosSiguientes:
+                        print(f"{tarea.titulo}")
+                else:
+                    print("No has introducido la respuesta")
 ```
 
 ### Select con columnas específicas
