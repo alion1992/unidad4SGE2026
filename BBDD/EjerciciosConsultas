@@ -1,0 +1,10 @@
+1)Añadir opción de menú por la cual podamos buscar por nombre de un programador y se listen el nombre sus tareas,
+el nombre del sprint y su estado.
+
+2)Añadir opción de menú para listar las 3 primeras tareas de los sprints (buscar por id introducido) Se listará
+el nombre del sprint, su estado, horas invertidas y estimacion
+
+3) Listar las tareas que pertezcan o al sprint 1 o al sprint 2
+
+4)Buscar mediante el id de una tarea las etiquetas que tiene asociada esa tarea.
+
