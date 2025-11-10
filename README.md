@@ -131,5 +131,93 @@ class Pedido(Base):
 
     def __repr__(self):
         return f"<Pedido(id={self.id}, total={self.total})>"
+```
 
-    ```
+<h1>CONSULtAS CON FILTER</h1>
+
+### Obtener todos los registros de una tabla (.all)
+
+```python
+productos = session.query(Producto).all()
+
+for p in productos:
+    print(p.id, p.nombre, p.precio)
+```
+
+Esto equivale a 
+
+```sql
+SELECT * FROM producto;
+```
+
+#### filter() + all()
+
+```python
+productos_baratos = session.query(Producto).filter(Producto.precio < 10).all()
+
+for p in productos_baratos:
+    print(p.nombre, p.precio)
+```
+Esto equivale a 
+
+```sql
+SELECT * FROM producto WHERE precio < 10;
+```
+### filter con igualdad
+
+```python
+teclados = session.query(Producto).filter(Producto.nombre == "Teclado").all()
+```
+
+### first() vs all()
+
+First devuelve el primero o None
+
+All devuelve una lista sobre la que iterar
+
+### Order by
+
+```python 
+productos = session.query(Producto).order_by(Producto.precio.desc()).all()
+```
+
+### limit y offset
+
+```python
+            while True:
+                resp = input("¿Quieres otras dos?")
+
+                if resp.lower() == "no":
+                    print("adios")
+                    break
+
+                if resp.lower() == "si":
+                    dosSiguientes = session.query(Tarea).filter(Tarea.estimacion_horas > 2).offset(2).limit(2).all()
+                    for tarea in dosSiguientes:
+                        print(f"{tarea.titulo}")
+                else:
+                    print("No has introducido la respuesta")
+```
+
+### Select con columnas específicas
+
+```python
+productos_especificos = session.query(Producto.nombre, Producto.precio).all()
+```
+### Join 
+
+```python
+tareas = (
+    session.query(Tarea, Programador)
+    .join(Programador, Tarea.programador_id == Programador.id)
+    .filter(Programador.nombre == "Ana García")
+    .all()
+)
+
+for tarea, programador in tareas:
+    print(tarea.titulo, "-", programador.nombre)
+```
+
+
+
+
