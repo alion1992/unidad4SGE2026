@@ -78,6 +78,9 @@ class Programador(Base):
     def __repr__(self):
         return f"<Programador id={self.id} nombre={self.nombre!r} email={self.email!r}>"
 
+    def __str__(self):
+        return f"ID:{self.id} Nombre: {self.nombre} EMAIL: {self.email}"
+
 class Etiqueta(Base):
     __tablename__ = "etiquetas"
     __table_args__ = {"schema": "scrum"}
@@ -123,6 +126,8 @@ class Tarea(Base):
     def __repr__(self):
         return f"<Tarea id={self.id} titulo={self.titulo!r} sprint_id={self.sprint_id} programador_id={self.programador_id}>"
 
+    def __str__(self):
+        return f"ID {self.id} Titulo {self.titulo} Estimacion horas {self.estimacion_horas} horas envertidas {self.horas_invertidas}"
 
 class EtiquetaTarea(Base):
     __tablename__ = "tareas_etiquetas"
