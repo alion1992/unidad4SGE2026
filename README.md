@@ -152,7 +152,7 @@ SELECT * FROM producto;
 
 #### filter() + all()
 
-´´´python
+```python
 productos_baratos = session.query(Producto).filter(Producto.precio < 10).all()
 
 for p in productos_baratos:
