@@ -204,6 +204,45 @@ productos = session.query(Producto).order_by(Producto.precio.desc()).all()
 ```python
 productos_especificos = session.query(Producto.nombre, Producto.precio).all()
 ```
+
+### Uso de AND_ y OR_
+
+```python
+       tareas = self.session.query(Tarea).filter(and_
+                                             (Tarea.sprint_id == 1, Tarea.estado_id == 1)).all()
+        for tarea in tareas:
+            print(tarea.titulo)
+```
+
+Estamos evaluando en una select la posibilidad de doble evaluación inclusiva de ambas con _and traducido a sql sería:
+
+```sql
+SELECT *
+FROM tarea
+WHERE sprint_id = 1
+  AND estado_id = 1;
+```
+
+Al igual tenemos la posibilidad de evaluar la condición discriminatoria o uno u otro con <strong>OR_</strong>
+
+```python
+from sqlalchemy import or_
+
+tareas = self.session.query(Tarea).filter(or_(
+    Tarea.sprint_id == 1,
+    Tarea.estado_id == 1
+)).all()
+```
+
+Traducido en sql es:
+
+```sql
+SELECT *
+FROM tarea
+WHERE sprint_id = 1
+   OR estado_id = 1;
+```
+
 ### Join 
 
 ```python
